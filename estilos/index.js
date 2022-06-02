@@ -1,4 +1,21 @@
 
+
+// Slider de imagenes
+
+function rotate() {
+  var lastChild = $(".slider div:last-child").clone();
+  /*$('#test').html(lastChild)*/
+  $(".slider div").removeClass("firstSlide");
+  $(".slider div:last-child").remove();
+  $(".slider").prepend(lastChild);
+  $(lastChild).addClass("firstSlide");
+}
+
+window.setInterval(function () {
+  rotate();
+}, 3000);
+
+
 // Funcion para que tengan animaciones los elementos cuando se recarga la pagina
 window.sr =ScrollReveal();
 
